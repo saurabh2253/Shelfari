@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Shelfari 1.0</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<div id="header"><h1>Library Catalogue</h1></div>
+
+<div id="sidebar"></div>
+
+<div id="content">
+<h2>Welcome to Shelfari 1.0</br>Click on 'New Book' button to add new book</h2>
+
+</div>
+
+<!-- Templates -->
+<script type="text/template" id="tpl-header">
+    <span class="title">Library Catalogue</span>
+	<button class="new">New Book</button>
+</script>
+
+<script type="text/template" id="tpl-book-list-item">
+	<a href='#books/<%= id %>'><%= name %></a>
+</script>
+
+<script type="text/template" id="tpl-book-details">
+
+    <div class="form-left-col">
+        <label>Id:</label>
+        <input type="text" id="bookId" name="id" value="<%= id %>" disabled />
+        <label>Name:</label>
+        <input type="text" id="name" name="name" value="<%= name %>" required/>
+        <label>Author Name:</label>
+        <input type="text" id="author" name="author" value="<%= author %>"/>
+        <label>Status:</label>
+        <select id = "status" name="status" value="<%= status %>">
+		<option>Choose Book Status</option>
+		<option value="Read">Read</option>
+		<option value="Not Yet Read">Not Read Yet</option>
+		</select>	</br>	
+        <button class="save">Save</button>
+        <button class="delete">Delete</button>
+    </div>
+
+   
+
+</script>
+
+<!-- JavaScript -->
+<script src="jquery-1.7.1.min.js"></script>
+<script src="underscore-min.js"></script>
+<script src="backbone-min.js"></script>
+<script src="main.js"></script>   
+
+</body>
+</html>
